@@ -12,6 +12,7 @@ requests = "*"
 pyyaml = "*"
 inflection = "*"
 uritemplate = "*"
+drf-yasg = "*"
 
 [dev-packages]
 

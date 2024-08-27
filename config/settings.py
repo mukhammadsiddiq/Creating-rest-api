@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'drf_yasg',
     # local
     'post.apps.PostConfig',
 ]
