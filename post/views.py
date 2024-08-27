@@ -1,6 +1,7 @@
+from django.contrib.auth import get_user_model
 from rest_framework.generics import ListAPIView, RetrieveUpdateDestroyAPIView
 from .models import Post
-from .serializers import PostSerializer
+from .serializers import PostSerializer, UserSerializer
 from .permissions import isAuthenticatedOrReadOnly
 
 
@@ -16,3 +17,13 @@ class UpdateApiPostView(RetrieveUpdateDestroyAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
     permission_classes = (isAuthenticatedOrReadOnly, )
+
+
+class UserListApiView(ListAPIView):
+    queryset = get_user_model().objects.all()
+    serializer_class = UserSerializer
+
+
+class UserUpdateApiView(RetrieveUpdateDestroyAPIView):
+    queryset = get_user_model().objects.all()
+    serializer_class = UserSerializer
